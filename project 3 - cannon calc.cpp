@@ -5,7 +5,11 @@
 
 int main()
 {
-	rerun:
+	rerun: //What does this line do?  
+	
+	
+	//Put all of this into it's own function
+	//********** Function start **********
 	
 	double a;
 	double ar;
@@ -16,7 +20,7 @@ int main()
 	double height;
 	double t;
 	double time = 0;
-	char run;
+	char run; 
 	double target;
 	double distDiff;
 
@@ -122,13 +126,18 @@ int main()
 
 			file.close();
 		}
+	
+	//********** Function End **********
 
-		int main2();
+		int main2();  //If you put the calculation code in it's own function you don't need to wrap the following code in it's own function
 		{
 			std::cout << "Would you like to run the program again? If yes press Y, If no press N";
-			std::cin >> run;
+			std::cin >> run;  //where is run defined?  Bring it closer to this bit of code
+			//I would add a do while loop here - see https://stackoverflow.com/a/61116003
+			//and be careful you don't go into an infinite loop
 
-			if (run == 'y') main();
+			if (run == 'y') main();  //You can't call main from within your own code.  This is called by language as an entry point. 
+						//  You would put your calcultion code into it's own function, and call that
 			else return;
 		}
 
